@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin — Field Service Dispatch</title>
+    <link rel="stylesheet" href="/css/app.css"/>
+</head>
+<body onload="loadAdmin()">
+<div class="topbar">
+    <div class="brand">Field<span>Service</span> Dispatch</div>
+    <div class="nav">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/operations">Operations</a>
+        <a href="/admin">Admin</a>
+        <span id="session" class="session"></span>
+        <a href="#" onclick="logout()">Sign out</a>
+    </div>
+</div>
+<div class="container">
+    <h1 class="page-title">Administration</h1>
+    <p class="page-sub">Review operator accounts and open the diagnostic tools.</p>
+
+    <div class="panel">
+        <h2>Operator Accounts</h2>
+        <table>
+            <thead>
+            <tr><th>ID</th><th>Username</th><th>Full name</th><th>Role</th><th>Created</th></tr>
+            </thead>
+            <tbody id="operators"></tbody>
+        </table>
+    </div>
+
+    <div class="panel">
+        <h2>Diagnostic Tools</h2>
+        <p class="muted">Operational tooling used by the platform team.</p>
+        <div class="links">
+            <a href="/internal/diagnostics" target="_blank">Runtime diagnostics</a>
+            <a href="/h2-console" target="_blank">Database console</a>
+        </div>
+    </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

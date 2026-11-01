@@ -1,0 +1,252 @@
+:root {
+    --bg: #f4f6fb;
+    --panel: #ffffff;
+    --ink: #1f2a44;
+    --muted: #67708a;
+    --line: #e2e7f1;
+    --brand: #2f5bea;
+    --brand-dark: #2447bd;
+    --ok: #1f9d6b;
+    --warn: #c9821a;
+    --danger: #c8385a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+a {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 28px;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+}
+
+.brand span {
+    color: var(--brand);
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav a {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: var(--ink);
+}
+
+.session {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.container {
+    max-width: 1080px;
+    margin: 26px auto;
+    padding: 0 24px;
+}
+
+.page-title {
+    font-size: 22px;
+    margin: 0 0 4px;
+}
+
+.page-sub {
+    color: var(--muted);
+    margin: 0 0 22px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.card .metric {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.card .label {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 22px;
+}
+
+.panel h2 {
+    margin: 0 0 14px;
+    font-size: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+}
+
+th {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge.open { background: #eef2ff; color: var(--brand-dark); }
+.badge.scheduled { background: #fff6e6; color: var(--warn); }
+.badge.dispatched { background: #e8f6f0; color: var(--ok); }
+.badge.closed { background: #eef0f5; color: var(--muted); }
+.badge.cancelled { background: #fbe9ee; color: var(--danger); }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+button {
+    background: var(--brand);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--brand-dark);
+}
+
+button.secondary {
+    background: #eef0f5;
+    color: var(--ink);
+}
+
+.result {
+    margin-top: 12px;
+    font-size: 13px;
+    background: #f7f9fd;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.login-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    width: 360px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.login-card h1 {
+    font-size: 20px;
+    margin: 0 0 6px;
+}
+
+.login-card p {
+    color: var(--muted);
+    margin: 0 0 22px;
+    font-size: 14px;
+}
+
+.error {
+    color: var(--danger);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}

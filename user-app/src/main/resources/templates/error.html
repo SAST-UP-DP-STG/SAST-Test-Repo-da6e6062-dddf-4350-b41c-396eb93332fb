@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Error — UserApp</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 2rem; background: #f5f5f5; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .card { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); max-width: 420px; width: 100%; }
+        h1 { margin: 0 0 1rem; font-size: 1.25rem; color: #333; }
+        .msg { padding: 0.6rem; margin-bottom: 1rem; border-radius: 4px; font-size: 0.9rem; background: #fee2e2; color: #991b1b; }
+        a { color: #2563eb; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Something went wrong</h1>
+        <p class="msg" th:text="${message != null ? message : 'Please try again.'}">Please try again.</p>
+        <a th:href="@{/login}">Back to sign in</a>
+    </div>
+</body>
+</html>

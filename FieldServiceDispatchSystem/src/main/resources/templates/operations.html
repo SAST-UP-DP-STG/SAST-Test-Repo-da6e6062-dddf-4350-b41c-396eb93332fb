@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Operations — Field Service Dispatch</title>
+    <link rel="stylesheet" href="/css/app.css"/>
+</head>
+<body onload="renderSession()">
+<div class="topbar">
+    <div class="brand">Field<span>Service</span> Dispatch</div>
+    <div class="nav">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/operations">Operations</a>
+        <a href="/admin">Admin</a>
+        <span id="session" class="session"></span>
+        <a href="#" onclick="logout()">Sign out</a>
+    </div>
+</div>
+<div class="container">
+    <h1 class="page-title">Field Operations</h1>
+    <p class="page-sub">Close work orders, release dispatches, export customer contracts, and submit parts recounts.</p>
+
+    <div class="panel">
+        <h2>Close Work Order</h2>
+        <form onsubmit="closeWorkOrder(event)">
+            <div class="form-grid">
+                <div>
+                    <label for="close-id">Work order ID</label>
+                    <input id="close-id" required/>
+                </div>
+                <div>
+                    <label for="close-resolution">Resolution note</label>
+                    <input id="close-resolution" value="Completed on site"/>
+                </div>
+            </div>
+            <button type="submit">Close work order</button>
+            <div id="close-result" class="result"></div>
+        </form>
+    </div>
+
+    <div class="panel">
+        <h2>Release Technician Dispatch</h2>
+        <form onsubmit="releaseDispatch(event)">
+            <div class="form-grid">
+                <div>
+                    <label for="release-id">Work order ID</label>
+                    <input id="release-id" required/>
+                </div>
+                <div>
+                    <label for="release-tech">Technician ID</label>
+                    <input id="release-tech" required/>
+                </div>
+            </div>
+            <button type="submit">Release dispatch</button>
+            <div id="release-result" class="result"></div>
+        </form>
+    </div>
+
+    <div class="panel">
+        <h2>Export Customer Contracts</h2>
+        <p class="muted">Generate a CSV export of customer contract records.</p>
+        <button class="secondary" onclick="exportCustomers()">Export contracts</button>
+        <div id="export-result" class="result"></div>
+    </div>
+
+    <div class="panel">
+        <h2>Parts Recount Upload</h2>
+        <p class="muted">Upload a CSV file with columns <strong>sku,quantity</strong> to update on-hand counts.</p>
+        <form onsubmit="recountParts(event)">
+            <div class="form-grid">
+                <div>
+                    <label for="recount-file">Recount file</label>
+                    <input id="recount-file" type="file" accept=".csv,text/csv"/>
+                </div>
+            </div>
+            <button type="submit">Submit recount</button>
+            <div id="recount-result" class="result"></div>
+        </form>
+    </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>
